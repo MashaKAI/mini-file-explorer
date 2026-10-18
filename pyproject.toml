@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mini-file-explorer"
+version = "1.0.0"
+description = "Клавіатурний TUI-провідник файлів (Python + Textual) з темами retro/modern"
+requires-python = ">=3.11"
+dependencies = ["textual>=0.86"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-asyncio>=0.23"]
+
+[project.scripts]
+explorer = "explorer.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
